@@ -808,12 +808,16 @@ function renderTrendChart() {
 }
 
 // --------------------------------------------------------------------------
-// MODAL & ACTION HANDLERS
+// MODAL & ACTION HANDLERS (FIXED DROPDOWN LOGIC BELOW)
 // --------------------------------------------------------------------------
 function populateCategoryDropdowns() {
     const sel = document.getElementById('txCategorySelect');
     const filterSel = document.getElementById('txCategoryFilter');
-    const activeType = document.querySelector('#modalTransaction input[name="txType"]:checked')?.value || 'expense';
+    
+    // FIX: Dynamically checks active income/expense selection instead of hardcoding expense categories
+    const activeType = document.querySelector('#modalTransaction input[name="txType"]:checked')?.value || 
+                       (document.getElementById('typeBtnIncome')?.classList.contains('active-income') ? 'income' : 'expense');
+    
     const categories = activeType === 'income' ? INCOME_CATEGORIES : EXPENSE_CATEGORIES;
 
     if (sel) {
