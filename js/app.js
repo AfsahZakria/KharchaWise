@@ -838,6 +838,12 @@ function openAddTransactionModal(defaultType = 'expense') {
     setTransactionModalType(defaultType);
     
     document.getElementById('txAmountInput').value = '';
+    
+    // UPDATED: Changed placeholder text from 'e.g. October salary' to 'e.g. Monthly salary'
+    const descInput = document.getElementById('txDescInput');
+    if (descInput) {
+        descInput.placeholder = 'e.g. Monthly salary';
+    }
     document.getElementById('txDescInput').value = '';
     document.getElementById('txDateInput').value = getTodayString();
     
@@ -979,7 +985,14 @@ function openNewGoalModal() {
     editingGoalId = null;
     document.getElementById('modalGoalTitle').textContent = 'Create New Savings Goal';
     document.getElementById('goalNameInput').value = '';
-    document.getElementById('goalTargetInput').value = '';
+    
+    // FIX: Ensure target input allows any free-form number entry without step constraints
+    const targetInput = document.getElementById('goalTargetInput');
+    if (targetInput) {
+        targetInput.step = 'any';
+    }
+    targetInput.value = '';
+    
     document.getElementById('goalInitialSavedInput').value = '';
     document.getElementById('goalDueDateInput').value = calculateFutureDate(60);
     document.getElementById('modalGoal').classList.add('active');
@@ -992,7 +1005,13 @@ function openEditGoalModal(id) {
     editingGoalId = id;
     document.getElementById('modalGoalTitle').textContent = 'Edit Savings Goal';
     document.getElementById('goalNameInput').value = goal.title;
-    document.getElementById('goalTargetInput').value = goal.target;
+    
+    const targetInput = document.getElementById('goalTargetInput');
+    if (targetInput) {
+        targetInput.step = 'any';
+    }
+    targetInput.value = goal.target;
+
     document.getElementById('goalInitialSavedInput').value = goal.saved;
     document.getElementById('goalDueDateInput').value = goal.dueDate;
     document.getElementById('modalGoal').classList.add('active');
