@@ -528,7 +528,7 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="txAmountInput">Amount (Rs.) *</label>
-                        <input type="number" step="0.01" min="1" id="txAmountInput" class="form-control" placeholder="e.g. 5000" required>
+                        <input type="number" step="any" min="1" id="txAmountInput" class="form-control" placeholder="e.g. 5000" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="txDateInput">Date *</label>
@@ -545,7 +545,7 @@
 
                 <div class="form-group">
                     <label class="form-label" for="txDescInput">Description *</label>
-                    <input type="text" id="txDescInput" class="form-control" placeholder="e.g. Monthly Grocery Ration or K-Electric Bill" maxlength="120" required>
+                    <input type="text" id="txDescInput" class="form-control" placeholder="e.g. Monthly salary" maxlength="120" required>
                 </div>
 
                 <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px;">
@@ -566,7 +566,7 @@
             <form onsubmit="handleSaveOverallBudget(event)">
                 <div class="form-group">
                     <label class="form-label" for="overallBudgetInput">Total Monthly Spending Limit (Rs.)</label>
-                    <input type="number" step="500" min="0" id="overallBudgetInput" class="form-control" placeholder="e.g. 150000" required>
+                    <input type="number" step="any" min="0" id="overallBudgetInput" class="form-control" placeholder="e.g. 150000" required>
                     <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">Set to 0 if you don't want an overall limit.</p>
                 </div>
                 <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px;">
@@ -587,7 +587,7 @@
             <form onsubmit="handleSaveCategoryLimit(event)">
                 <div class="form-group">
                     <label class="form-label" for="categoryLimitInput">Monthly Limit (Rs.)</label>
-                    <input type="number" step="500" min="0" id="categoryLimitInput" class="form-control" placeholder="e.g. 40000">
+                    <input type="number" step="any" min="0" id="categoryLimitInput" class="form-control" placeholder="e.g. 40000">
                     <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">Leave empty or set to 0 to remove this limit.</p>
                 </div>
                 <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px;">
@@ -614,11 +614,11 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="goalTargetInput">Target Amount (Rs.) *</label>
-                        <input type="number" step="1000" min="100" id="goalTargetInput" class="form-control" placeholder="e.g. 120000" required>
+                        <input type="number" step="any" min="100" id="goalTargetInput" class="form-control" placeholder="e.g. 120000" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="goalInitialSavedInput">Already Saved (Rs.)</label>
-                        <input type="number" step="1000" min="0" id="goalInitialSavedInput" class="form-control" placeholder="e.g. 40000">
+                        <input type="number" step="any" min="0" id="goalInitialSavedInput" class="form-control" placeholder="e.g. 40000">
                     </div>
                 </div>
 
@@ -645,7 +645,7 @@
             <form onsubmit="handleSaveContribution(event)">
                 <div class="form-group">
                     <label class="form-label" for="contribAmountInput">Deposit Amount (Rs.) *</label>
-                    <input type="number" step="100" min="1" id="contribAmountInput" class="form-control" placeholder="e.g. 15000" required>
+                    <input type="number" step="any" min="1" id="contribAmountInput" class="form-control" placeholder="e.g. 15000" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="contribDateInput">Contribution Date *</label>
