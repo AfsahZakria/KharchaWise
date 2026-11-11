@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  kharchawise:
+    build: .
+    container_name: kharchawise-app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - DB_PATH=/app/database/kharchawise.db
+    volumes:
+      - kharchawise_data:/app/database
+
+volumes:
+  kharchawise_data:
+    driver: local
